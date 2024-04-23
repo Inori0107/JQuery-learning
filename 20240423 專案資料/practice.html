@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+        <form id="form">
+            <input type="text" id="text" />
+            <input type="submit" value="新增" id="btn">
+            <ul id="list"></ul>
+        </form>
+        <script src=https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous"></script>
+        <script>
+            $('#form').submit(function(){
+                // 停止表單跳頁
+                event.preventDefault();
+
+                // 如果值是空的 不執行
+                if ($('#text').val().length === 0) return
+
+                // 取得輸入框的值 並新增
+                $('#list').append(`
+                <li>
+                ${$('#text').val()}
+                <input type="button" value="X" class="remove">
+                </li>
+                `)
+
+                // 輸入欄位 清空
+                $('#text').val('')
+            })
+            // 指定 .remove
+            $('#list').on('click','.remove',function(){
+                $(this).parent().remove()
+            })
+        </script>
+	</body>
+</html>
