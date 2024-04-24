@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #img {
+            position:relative;
+            /* width:500px;
+            height:500px; */
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="滑入" id="btn1">
+    <input type="button" value="滑出" id="btn2">
+    <input type="button" value="滑入滑出" id="btn3">
+    <img src="https://github.com/wdaweb.png" id="img">
+
+    <script src=https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        // 若未設定 width 則等比例縮放
+        $('#btn1').click(function(){
+            // .slideDown(長度, 'linear', function)
+            $('#img').slideDown(2000);
+        })
+        $('#btn2').click(function(){
+            // .slideUp(長度, 'linear', function)
+            $('#img').slideUp(2000);
+        })
+        $('#btn3').click(function(){
+            // .slideToggle(長度, 'linear', function)
+            $('#img').slideToggle(2000);
+        })
+    </script>
+</body>
+</html>

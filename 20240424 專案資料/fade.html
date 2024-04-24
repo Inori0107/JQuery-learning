@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="淡出" id="btn1">
+    <input type="button" value="淡入" id="btn2">
+    <input type="button" value="半透明" id="btn3">
+    <input type="button" value="淡入淡出" id="btn4">
+    <img src="https://github.com/wdaweb.png" id="img">
+
+    <script src=https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $('#btn1').click(function(){
+            // .fadeOut(長度, 'linear', function)
+            $('#img').fadeOut()
+        })
+
+        $('#btn2').click(function(){
+            // .fadeIn(長度, 'linear', function)
+            $('#img').fadeIn()
+        })
+
+        $('#btn3').click(function(){
+            // .fadeTo(長度, 不透明度, 'linear', function)
+            // 長度, 不透明必填
+            // 在動畫結束時 不會設為 display:none
+            $('#img').fadeTo(1000, 0.5)
+        })
+
+        $('#btn4').click(function(){
+            // .fadeToggle(長度, 'linear', function)
+            $('#img').fadeToggle()
+        })
+    </script>
+</body>
+</html>
